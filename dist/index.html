@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список сотрудников</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script defer src="index.js"></script>
+</head>
+
+<body>
+  <section class="main">
+    <div class="container">
+      <form id="addForm" class="form-control addStudent  mb-3">
+        <h2>Добавление нового студента</h2>
+        <p id="text"></p>
+        <div class="row">
+          <div class="mb-3 add-div col">
+            <label for="inpSurname">Фамилия</label>
+            <input id="inpSurname" class="form-control addInp" type="text">
+          </div>
+          <div class="mb-3 add-div col">
+            <label for="inpName">Имя</label>
+            <input id="inpName" class="form-control addInp" type="text">
+          </div>
+          <div class="mb-3 add-div col">
+            <label for="inpPatronymic">Отчество</label>
+            <input id="inpPatronymic" class="form-control addInp" type="text">
+          </div>
+        </div>
+        <div class="row">
+          <div class="mb-3 add-div col">
+            <label for="inpFaculty">Факультет</label>
+            <input id="inpFaculty" class="form-control addInp" type="text">
+          </div>
+          <div class="mb-3 add-div col">
+            <label for="inpDateOfBirth">Дата рождения</label>
+            <input id="inpDateOfBirth" class="form-control addInp" type="date" min="1900">
+          </div>
+          <div class="mb-3 add-div col">
+            <label for="inpStartDate">Дата начала обучения</label>
+            <input id="inpStartDate" class="form-control addInp" type="number" min="2000">
+          </div>
+        </div>
+        <button class="btn btn-primary " id="addBtn" type="submit">Добавить</button>
+      </form>
+      <form class="form-control searchForm" action="">
+        <h2>Поиск по таблице </h2>
+        <div class="row">
+
+          <div class="mb-3 col">
+            <input id="filter-fullName" class="form-control" type="text" placeholder="ФИО">
+          </div>
+          <div class="mb-3 col">
+            <input id="filter-faculty" class="form-control" type="text" placeholder="Факультет">
+          </div>
+          <div class="mb-3 col">
+            <input id="filter-startDate" class="form-control" type="text" placeholder="Год начала обучения">
+          </div>
+          <div class="mb-3 col">
+            <input id="filter-finishDate" class="form-control" type="text" placeholder="Год окончания обучения">
+          </div>
+        </div>
+      </form>
+      <h1>Список студентов</h1>
+      <table class="table table-success table-striped studentsTable">
+        <thead>
+          <th data-column="fullName">Фамилия Имя Отчество</th>
+          <th data-column="faculty">Факультет</th>
+          <th data-column="dateOfBirth">Дата рождения(возраст)</th>
+          <th data-column="startDate">Годы обучения(курс)</th>
+        </thead>
+        <tbody id="studentsList"></tbody>
+      </table>
+
+    </div>
+
+  </section>
+</body>
+
+</html>
